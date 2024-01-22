@@ -10,9 +10,9 @@ Sudo -l verilende eger bunu gorursense:
     env_reset, mail_badpass,
     secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
 
- user user8 may run the following commands on polobox:
+  'user user8 may run the following commands on polobox:'
     (root) NOPASSWD: /usr/bin/vi
-user8@polobox:~$ 
+   user8@polobox:~$ 
 -------
 
 bunu yaz:
