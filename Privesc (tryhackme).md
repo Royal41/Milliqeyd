@@ -2,14 +2,14 @@
 
 #find / -perm -u=s -type f 2>/dev/nul
 
-find - "tap" əmrini işə salır
+1. find - "tap" əmrini işə salır
 
-/ - Bütün fayl sistemini axtarır
+2. / - Bütün fayl sistemini axtarır
 
--perm - xüsusi icazələri olan faylları axtarır
+3. -perm - xüsusi icazələri olan faylları axtarır
 
--u=s - İstənilən icazə bit rejimi fayl üçün təyin edilmişdir. Bu formada simvolik rejimlər qəbul edilir
+4. -u=s - İstənilən icazə bit rejimi fayl üçün təyin edilmişdir. Bu formada simvolik rejimlər qəbul edilir
 
--tip f - Yalnız faylları axtarın
+5. -tip f - Yalnız faylları axtarın
 
-2>/dev/null - Səhvləri aradan qaldırır
+6. 2>/dev/null - Səhvləri aradan qaldırır
