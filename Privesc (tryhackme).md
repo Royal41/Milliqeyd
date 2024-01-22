@@ -54,7 +54,12 @@ getend group  root -komandi ile  sisteminizde tanımlanmış tüm grupları ve i
 root:x:0:0:root:/root:/bin/bash  (burada 0:0 )ancaq roota aid olur diger istifadeciler 1000 1000 den baslayir
 
 
+
+
 ## openssl passwd hacker -1 salt hacker pass123
+
+#hazir  root olmaq ucun
+
 hacker:$1$hacker$zVnrpoW2JQO5YUrLmAs.o1:0:0:root:/root:/bin/bash
 parol:pass123
 
