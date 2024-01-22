@@ -1,8 +1,9 @@
-## Sudo -l verilende eger bunu gorursense:
+## Sudo -l 
 
 bu kimi, müəyyən əmrləri root parolu olmadan kök istifadəçi kimi işlədə bildiyinizi görəcəksiniz. Bu, imtiyazları artırmağa imkan verə bilər.
 
 
+Sudo -l verilende eger bunu gorursense:
 -------
 user8@polobox:~$ sudo -l
 Matching Defaults entries for user8 on polobox:
