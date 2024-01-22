@@ -13,3 +13,25 @@
 5. -tip f - Yalnız faylları axtarın
 
 6. 2>/dev/null - Səhvləri aradan qaldırır
+
+
+## /etc/passwd-haqqinda qeydler.
+
+
+/etc/passwd faylı giriş zamanı tələb olunan vacib məlumatları saxlayır. Başqa sözlə, istifadəçi hesabı məlumatlarını saxlayır
+
+1. O, hər bir hesab üçün : user ID, group ID, home directory, shell, and more haqqda melumat verir
+
+2.Aşağıdakı kimi yeddi sahənin cəmi. Ümumiyyətlə, /etc/passwd fayl girişi aşağıdakı kimi görünür:
+
+    test:x:0:0:root:/root:/bin/bash
+
+[iki nöqtə ilə bölünür (:)]
+
+USer name: İstifadəçi daxil olduqda istifadə olunur. Uzunluğu 1 ilə 32 simvol arasında olmalıdır.
+Password : X simvolu şifrələnmiş parolun /etc/shadow faylında saxlandığını göstərir. Nəzərə alın ki, CLI-də yazılan parolun hashini hesablamaq və ya parolun hashini /etc/shadow faylında saxlamaq/yeniləmək üçün passwd əmrindən istifadə etməlisiniz, bu halda parol hashı "" kimi saxlanılır. x".
+User ID ( UID ) : Hər bir istifadəçiyə istifadəçi ID (UID) təyin edilməlidir. UID 0 (sıfır) kök üçün, UID 1-99 isə əvvəlcədən təyin edilmiş digər hesablar üçün qorunur. Əlavə UID 100-999 inzibati və sistem hesabları/qrupları üçün sistem tərəfindən qorunur.
+Group ID (GID) : Əsas qrup ID (/etc/group faylında saxlanılır)
+User ID Info : Şərh sahəsi. Bu, istifadəçinin tam adı, telefon nömrəsi və s. kimi istifadəçilər haqqında əlavə məlumat əlavə etməyə imkan verir. Bu sahə barmaq əmri ilə istifadə olunur.
+Home directory : İstifadəçi daxil olduqda onun daxil olacağı qovluğun mütləq yolu. Bu kataloq mövcud deyilsə, istifadəçilərin kataloqu / olur.
+Command/shell : Əmr və ya qabığın mütləq yolu (/bin/bash). Tipik olaraq, bu bir qabıqdır. Nəzərə alın ki, bunun bir qabıq olması lazım deyil.
