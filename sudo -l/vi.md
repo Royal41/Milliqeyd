@@ -5,12 +5,12 @@ bu kimi, müəyyən əmrləri root parolu olmadan kök istifadəçi kimi işləd
 
 Sudo -l verilende eger bunu gorursense:
 -------
-user8@polobox:~$ sudo -l
-matching defaults entries for user8 on polobox:
+ user8@polobox:~$ sudo -l
+  matching defaults entries for user8 on polobox:
     env_reset, mail_badpass,
     secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
 
-User user8 may run the following commands on polobox:
+ user user8 may run the following commands on polobox:
     (root) NOPASSWD: /usr/bin/vi
 user8@polobox:~$ 
 -------
