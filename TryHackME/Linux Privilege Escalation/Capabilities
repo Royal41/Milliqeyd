@@ -1,0 +1,45 @@
+## Capabilities nedir
+
+# Istifadeci Emri sahib kimi icra edir ancaq verdiyi  mueyyen selahiyyet daxilinde .
+
+# sade deilde izah edesi olsaq: Sirket rehberi deyek ki bir iscini SIO etmir seneddi subutlu ama 
+   ona SIO nun selahiyitlerin verir ki sio kimi emrler verib icra ede bilsin ama sened uzerinde hemin iscini SIO etmir
+
+
+getcap komandasını istifadə edərək, xüsusi imtiyazlı fayllardakı imtiyazları görmək mümkündür.
+Xüsusən, proqramların və ya sistem fayllarının hansı imtiyazlara malik olduğunu görmək üçün faydalıdır.
+
+# getcap-  emri ile capabiliti olanlari tapa bilerik.
+
+
+  istifadesi;
+
+ --getcap fayl_adı
+
+ faylın imtiyazlarını görmək üçün:
+  --getcap /usr/bin/ping
+
+#  bu emrle errorlar arasindan lazim olan neticeleri gosterir fail olanlari gostermir
+  -- 2 > /dev/null.
+
+     misal olaraq:
+
+Failed to get capabilities of file `/proc/12157/patch_state' (Operation not supported)
+Failed to get capabilities of file `/proc/12157/arch_status' (Operation not supported)
+Failed to get capabilities of file `/run/snapd/ns/lxd.mnt' (Operation not supported)
+Failed to get capabilities of file `/dev/pts/1' (Operation not supported)
+Failed to get capabilities of file `/dev/pts/0' (Operation not supported)
+Failed to get capabilities of file `/dev/pts/ptmx' (Operation not supported)
+
+
+  # getcap -r / ---emri nedir:
+
+   getcap -r / komandası, Linux sistemində kök dosya sistemi (/) üzərindəki bütün faylların yeteneklerini (capabilities) 
+    rekursiv olaraq (alt dizinləri daxil olmaqla) göstərir.
+
+
+
+
+
+
+
