@@ -5,8 +5,12 @@ Linux-da PATH, əməliyyat sisteminə icra edilə bilən faylları harada axtarm
 Qabığa daxil edilməmiş və ya mütləq yol ilə müəyyən edilməmiş hər hansı bir əmr üçün 
 Linux PATH altında müəyyən edilmiş qovluqlarda axtarışa başlayacaq.
 
-
+------
 PATH bele gorsenir
 
-RIFF�4
+karen@ip-10-10-223-64:/$ echo $PATH
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+------
+
+
 
