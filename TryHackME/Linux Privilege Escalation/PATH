@@ -12,5 +12,15 @@ karen@ip-10-10-223-64:/$ echo $PATH
 /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 ------
 
+karen@ip-10-10-223-64:/tmp$ echo $PATH
+/tmp:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+karen@ip-10-10-223-64:/tmp$ export PATH=/tmp:$PATH
+karen@ip-10-10-223-64:/tmp$ echo $PATH
+/tmp:/tmp:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+karen@ip-10-10-223-64:/tmp$ 
 
 
+esas byolu deyismekdir:
+-------
+/tmp:/tmp:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+-------
