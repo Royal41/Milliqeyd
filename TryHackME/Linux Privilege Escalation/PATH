@@ -1,0 +1,10 @@
+##  PATH nedir?
+
+#Əgər istifadəçinizin yazma icazəsi olan qovluq yolda yerləşirsə, skripti işə salmaq üçün proqramı oğurlaya bilərsiniz. 
+Linux-da PATH, əməliyyat sisteminə icra edilə bilən faylları harada axtarmaq lazım olduğunu bildirən ekoloji dəyişəndir.
+Qabığa daxil edilməmiş və ya mütləq yol ilə müəyyən edilməmiş hər hansı bir əmr üçün Linux PATH altında müəyyən edilmiş qovluqlarda axtarışa başlayacaq.
+
+
+PATH bele gorsenir
+
+
