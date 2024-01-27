@@ -11,11 +11,11 @@ PATH dəyişənini dəyişdirməliyik ki, o, "ls" təqlidimizi saxladığımız 
 
 bele gorsenmelidir...
 ------
-user5@polobox:/tmp$ echo $PATH
-/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
-user5@polobox:/tmp$ export PATH=/tmp:$PATH
-user5@polobox:/tmp$ echo $PATH
-/tmp:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+  user5@polobox:/tmp$ echo $PATH
+  /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+  user5@polobox:/tmp$ export PATH=/tmp:$PATH
+  user5@polobox:/tmp$ echo $PATH
+  /tmp:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
 -----
 
 ## PATH -da yolu teyin etmek
