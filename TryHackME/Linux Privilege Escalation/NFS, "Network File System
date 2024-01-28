@@ -1,1 +1,20 @@
+## NFS nedir?
+
+#NFS, "Network File System" teriminin kısaltmasıdır ve bir ağ dosya paylaşım protokolünü ifade eder.
+NFS, bir bilgisayardaki dosyaların başka bir bilgisayar veya cihaz üzerinde paylaşılmasını sağlayan bir protokoldür.
+
+NFS, ağdaki diğer cihazlarla dosya paylaşımını kolaylaştırır ve ağdaki kullanıcıların aynı dosyaları okuma, yazma ve değiştirme yeteneğine sahip olmalarını sağlar. 
+Örneğin, bir NFS sunucusu dosyaları barındırır ve bu dosyalara erişmek isteyen diğer bilgisayarlar NFS istemcileri olarak işlev görür.
+
+----
+
+NFS (Şəbəkə Fayl Paylaşımı) konfiqurasiyası  faylında saxlanılır.
+--/etc/exports
+
+----
+
+## Hedef masinlarda paylasilan foolderleri gormek ucun :
+
+-- showmount -e 0.0.0.0  (ip)
+----
 
