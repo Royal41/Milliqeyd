@@ -70,4 +70,5 @@ Sol tərəfdəki xüsusiyyət panelində Şəbəkə ünvanı xüsusiyyətini se�
 
 
 
-Qeyd: Bu müvəqqəti MAC saxtakarlığıdır, ona görə də orijinal Fiziki ünvanınızı əldə etmək istəyirsinizsə, sadəcə tərs prosesdən istifadə edin
+# Qeyd: 
+Bu müvəqqəti MAC saxtakarlığıdır, ona görə də orijinal Fiziki ünvanınızı əldə etmək istəyirsinizsə, sadəcə tərs prosesdən istifadə edin
