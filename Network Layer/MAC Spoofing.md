@@ -1,4 +1,4 @@
-MAC spoofing-(  )
+# MAC spoofing-(  )
 
 
 MAC spoofing, bir şəbəkə cihazının (əsasən bir kompüterin və ya şəbəkə interfeys kartının) fiziki ünvanını (MAC ünvanı da deyilir) sahte bir ünvanla əvəzləmə prosesidir. MAC ünvanı, şəbəkə cihazlarının unikal kimlik nömrəsidir və əsasən digər cihazlarla əlaqə qurarkən istifadə olunur.
@@ -8,14 +8,14 @@ MAC spoofing, əsasən şəbəkədəki izləmə və ya izlənmə fəaliyyətlər
 Bu cür hücumlara qarşı qorunmaq üçün, şəbəkə idarəçiləri əsasən MAC ünvanı filtrələmə, port təhlükəsizliyi və şəbəkə izləmə kimi təhlükəsizlik tədbirlərindən istifadə edirlər. Ancaq, mürəkkəb bir şəbəkədə, MAC spoofing əleyhinə tam qorunma təmin etmək çətin ola bilər.
 
 
-Qeyd:
+# Qeyd:
 
 Şəbəkə daxilində MAC ünvanlarının saxtalaşdırılmasının qarşısını almaq üçün şəbəkə təhlükəsizliyi mütəxəssisləri Cisco IOS Switch-lərdə Dinamik ARP Təftişini (DAI) tətbiq edə bilərlər .
 
 
 
 
-Təsadüfi MAC ünvanı yaratmaq və interfeysə təyin etmək üçün aşağıdakıları etməliyik:
+# Təsadüfi MAC ünvanı yaratmaq və interfeysə təyin etmək üçün aşağıdakıları etməliyik:
 
 1.Komandanı istifadə edərək interfeysi məntiqi olaraq aşağı salın ifconfig wlan0 down
 
@@ -38,11 +38,11 @@ Təsadüfi MAC ünvanı yaratmaq və interfeysə təyin etmək üçün aşağıd
 		root@kali;~# ifconfig wlan0 up
 
 
-Qeyd
+# Qeyd
 macchanger –-helpBundan əlavə, bütün mövcud variantları görmək üçün əmrdən istifadə edə bilərsiniz .
 
 
-Windows 10-da MAC spoofing:
+# Windows 10-da MAC spoofing:
 
 Windows 10-da fiziki ünvanı dəyişdirin və əvvəlki versiya olduqca asandır. Növbəti addıma keçməzdən əvvəl sizə deyəcəm Windows 10-da MAC ünvanını necə yoxlamaq olar? 
 
