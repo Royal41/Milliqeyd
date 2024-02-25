@@ -2,8 +2,7 @@ SOC:
 
 Təhlükəsizlik Əməliyyatları Mərkəzi ( SOC )
 
-## Təhlükəsizlik Əməliyyatları Mərkəzi ( SOC ) zərərli kibertəhlükəsizlik hadisələrini aşkar etmək üçün şəbəkəni və
- onun sistemlərini izləyən kibertəhlükəsizlik mütəxəssisləri komandasıdır.
+## Təhlükəsizlik Əməliyyatları Mərkəzi ( SOC ) zərərli kibertəhlükəsizlik hadisələrini aşkar etmək üçün şəbəkəni və onun sistemlərini izləyən kibertəhlükəsizlik mütəxəssisləri komandasıdır.
 
  # SOC üçün əsas maraq sahələrindən bəziləri bunlardır:
 
